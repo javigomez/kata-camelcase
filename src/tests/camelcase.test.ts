@@ -7,7 +7,10 @@ describe('camel case', () => {
 	it('should return capitalised string when passing capitalized word', () => {
 		expect(camelCase('Foo')).toBe('Foo');
 	});
-	it('should return capitalised string when passing capitalized word', () => {
+	it('should return joined words removing spaces', () => {
 		expect(camelCase('Foo Bar')).toBe('FooBar');
+	});
+	it('should return joined words removing dashes and hyphens', () => {
+		expect(camelCase('Foo_Bar-Foo')).toBe('FooBarFoo');
 	});
 });

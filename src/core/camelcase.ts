@@ -1,8 +1,15 @@
 function removeSpaces(word: string) {
-    return word.replace(/\s/g, '');
+    return word.split(" ").join("");
+}
+
+function removeHyphens(word: string) {
+    return word.split("-").join("");
+}
+
+function removeUnderscores(word: string) {
+    return word.split("_").join("");
 }
 
 export function camelCase (word:string) {
-
-    return removeSpaces(word);
+    return removeSpaces(removeHyphens(removeUnderscores(word)));
 }
