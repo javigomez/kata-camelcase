@@ -1,3 +1,4 @@
 export function camelCase (word:string) {
-    return word
+    const nospaces = word.replace(/\s/g, '');
+    return nospaces
 }

@@ -7,4 +7,7 @@ describe('camel case', () => {
 	it('should return capitalised string when passing capitalized word', () => {
 		expect(camelCase('Foo')).toBe('Foo');
 	});
+	it('should return capitalised string when passing capitalized word', () => {
+		expect(camelCase('Foo Bar')).toBe('FooBar');
+	});
 });
