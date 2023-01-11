@@ -13,4 +13,7 @@ describe('camel case', () => {
 	it('should return joined words removing dashes and hyphens', () => {
 		expect(camelCase('Foo_Bar-Foo')).toBe('FooBarFoo');
 	});
+	it('should capitalise first letter', () => {
+		expect(camelCase('foo')).toBe('Foo');
+	});
 });

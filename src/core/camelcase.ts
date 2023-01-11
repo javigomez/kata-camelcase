@@ -14,6 +14,11 @@ function removeUnderscores(word: string) {
     return removeSymbolFrom('_', word)
 }
 
+function capitaliseFirstLetter(word:string) {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+
+}
+
 export function camelCase (word:string) {
-    return removeSpaces(removeHyphens(removeUnderscores(word)));
+    return capitaliseFirstLetter(removeSpaces(removeHyphens(removeUnderscores(word))));
 }
