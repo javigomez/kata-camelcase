@@ -1,4 +1,8 @@
+function removeSpaces(word: string) {
+    return word.replace(/\s/g, '');
+}
+
 export function camelCase (word:string) {
-    const nospaces = word.replace(/\s/g, '');
-    return nospaces
+
+    return removeSpaces(word);
 }
