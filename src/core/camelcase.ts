@@ -1,13 +1,17 @@
+
+function removeSymbolFrom(symbol:string, words:string) {
+    return words.split(symbol).join("");
+}
 function removeSpaces(word: string) {
-    return word.split(" ").join("");
+    return removeSymbolFrom(' ', word)
 }
 
 function removeHyphens(word: string) {
-    return word.split("-").join("");
+    return removeSymbolFrom('-', word)
 }
 
 function removeUnderscores(word: string) {
-    return word.split("_").join("");
+    return removeSymbolFrom('_', word)
 }
 
 export function camelCase (word:string) {
