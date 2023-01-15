@@ -1,5 +1,10 @@
-import {camelCase} from '../core/camelcase'
+import {camelCase,capitaliseFirstLetter} from '../core/camelcase'
 
+describe('capitaliseFirstLetter', () => {
+	it('should return "Foo" when "fOO" is given', () => {
+			expect(capitaliseFirstLetter('fOO')).toBe('Foo');
+	})
+})
 describe('camel case', () => {
 	it('should return empty string when passing ""', () => {
 		expect(camelCase('')).toBe('');
@@ -15,5 +20,8 @@ describe('camel case', () => {
 	});
 	it('should capitalise first letter', () => {
 		expect(camelCase('foo')).toBe('Foo');
+	});
+	it('should capitalise first letter of each word', () => {
+		expect(camelCase('foo_bar foo-bar')).toBe('FooBarFooBar');
 	});
 });

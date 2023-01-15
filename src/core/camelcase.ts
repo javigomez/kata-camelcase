@@ -1,24 +1,10 @@
-
-function removeSymbolFrom(symbol:string, words:string) {
-    return words.split(symbol).join("");
+export function capitaliseFirstLetter(word:string) {
+    return word.charAt(0).toUpperCase() + word.substring(1, word.length).toLowerCase();
 }
-function removeSpaces(word: string) {
-    return removeSymbolFrom(' ', word)
-}
+export function camelCase (phrase:string) {
+    phrase = phrase.split(' ').join('_')
+    phrase = phrase.split('-').join('_')
+    let words = phrase.split('_')
 
-function removeHyphens(word: string) {
-    return removeSymbolFrom('-', word)
-}
-
-function removeUnderscores(word: string) {
-    return removeSymbolFrom('_', word)
-}
-
-function capitaliseFirstLetter(word:string) {
-    return word.charAt(0).toUpperCase() + word.slice(1)
-
-}
-
-export function camelCase (word:string) {
-    return capitaliseFirstLetter(removeSpaces(removeHyphens(removeUnderscores(word))));
+    return words.map((word) => capitaliseFirstLetter(word)).join('')
 }
